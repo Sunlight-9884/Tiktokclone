@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background-color: rgb(139, 135, 135);
+  color: rgb(90, 93, 95);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.app__videos {
+  position: relative;
+  height: 50px;
+  background-color: beige;
+  overflow: scroll;
+  width: 100%;
+  max-width: 400px;
+  scroll-snap-type: y mandatory;
+  border-radius: 15px;
+  padding: 30px 30px;
+}
+.app__videos::-webkit-scrollbar {
+  display: none;
+}
+.app__videos {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.video__Header {
+  z-index: 999;
+  position: relative;
+  color: black;
+}
+.video__Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.app__videos .video__Header .tab .tabs {
+  color: beige;
+  font-size: 2em;
+  user-select: none;
+  cursor: pointer;
+}
+.app__videos .video__Header .tab .tabs .active {
+  font-weight: 500;
+}
+.app__videos .video__Header .tab .tabs#following {
+  position: relative;
+}
+.app__videos .video__Header .tab .tabs#following::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+.app__videos .video__Header .tab .tabs#following::before::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 150px;
+  height: 25px;
+  width: 2px;
+  background-color: red;
+  border-radius: 50%;
+}
+.video {
+  position: relative;
+  height: 50%;
+  width: 80%;
+  background-color: azure;
+  scroll-snap-align: start;
+}
+.video__player {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.videoSidebar {
+  position: absolute;
+  top: 48%;
+  right: 10px;
+}
+.videoSidebar .material-symbols-outlined {
+  font-size: 40px;
+  cursor: pointer;
+}
+.videoSidebar__button {
+  padding: 15px;
+  text-align: center;
+  color: rgb(12, 12, 12);
+  border: 10px;
+  border-radius: 2px;
+}
+.videoFooter {
+  position: relative;
+  bottom: 150px;
+  margin-left: 20px;
+  color: rgb(14, 13, 13);
+
+  display: flex;
+}
+@keyframes spinTheRecord {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.videoFooter__record {
+  animation: spinTheRecord infinite 5s linear;
+  height: 50px;
+  width: 50px;
+  filter: invert(1);
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  border-radius: 100px;
+}
+.videoFooter__text {
+  flex: 1;
+}
+.videoFooter__text h3 {
+  padding-bottom: 20px;
+}
+.videoFooter__icon {
+  position: absolute;
+}
+.videoFooter__ticker {
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+.videoFooter__ticker marquee {
+  height: fit-content;
+  margin-left: 30px;
+  width: 60%;
+}
+.videoFooter__description {
+  padding-bottom: 20px;
+}
+@media (max-width: 400px) {
+  .app__videos {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}

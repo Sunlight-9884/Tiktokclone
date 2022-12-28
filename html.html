@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTok</title>
+    <link rel="stylesheet" type="text/css" href="default_css.css " />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div clas="app__videos">
+      <div class="video">
+        <div class="video__Header">
+          <div class="tabs">Following</div>
+          <div calss="tab active">For you</div>
+        </div>
+        <video src="video.mp4" class="video__player"></video>
+
+        <div class="videoSidebar">
+          <div class="videoSidebar__button">
+            <span class="material-symbols-outlined"> favorite </span>
+            <p>12</p>
+          </div>
+
+          <div class="videoSidebar__button">
+            <span class="material-symbols-outlined"> chat </span>
+            <p>76</p>
+          </div>
+          <div class="videoSidebar__button">
+            <span class="material-symbols-outlined"> share </span>
+            <p>98</p>
+          </div>
+        </div>
+
+        <div class="videoFooter">
+          <div class="videoFooter_text">
+            <h3>@sunlight</h3>
+            <p class="videoFooter__description">
+              
+              <strong>GoodEveryday</strong>
+            </p>
+            <div class="videoFooter__ticker">
+              <span class="material-symbols-outlined"> music_note </span>
+              <marquee>LOve You so much</marquee>
+            </div>
+          </div>
+          <img src="./IMG_3205.JPG" class="videoFooter__record" alt="" />
+        </div>
+      </div>
+
+      <div class="video">
+        <div class="video__Header">
+          <div class="tabs">Following</div>
+          <div calss="tab active">For you</div>
+        </div>
+        <video src="video.mp4" class="video__player"></video>
+
+        <div class="videoSidebar">
+          <div class="videoSidebar__button">
+            <span class="material-symbols-outlined"> favorite </span>
+            <p>12</p>
+          </div>
+
+          <div class="videoSidebar__button">
+            <span class="material-symbols-outlined"> chat </span>
+            <p>76</p>
+          </div>
+          <div class="videoSidebar__button">
+            <span class="material-symbols-outlined"> share </span>
+            <p>98</p>
+          </div>
+        </div>
+        <div class="videoFooter">
+          <div class="videoFooter_text">
+            <h3>@sunlight</h3>
+            <p class="videoFooter__description">
+              <strong>GoodEveryday</strong>
+            </p>
+            <div class="videoFooter__ticker">
+              <span class="material-symbols-outlined"> music_note </span>
+              <marquee><strong>LOve You so much</strong></marquee>
+            </div>
+          </div>
+          <img src="./IMG_3205.JPG" class="videoFooter__record" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      const videos = document.querySelectorAll("video");
+      for (const video of videos) {
+        video.addEventListener("click", function () {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
